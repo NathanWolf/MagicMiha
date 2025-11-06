@@ -22,10 +22,12 @@ import org.jetbrains.annotations.Nullable;
 
 public class DummyPlugin implements Plugin {
     private final static Logger LOGGER = Logger.getLogger(DummyPlugin.class.getName());
-    private ClassLoader classLoader = null;
+    private final ClassLoader classLoader;
+    private final Server server;
 
-    public DummyPlugin() {
+    public DummyPlugin(Server server) {
         classLoader = this.getClass().getClassLoader();
+        this.server = server;
     }
 
     @Override
@@ -96,7 +98,7 @@ public class DummyPlugin implements Plugin {
 
     @Override
     public Server getServer() {
-        return null;
+        return server;
     }
 
     @Override
