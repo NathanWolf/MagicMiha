@@ -14,6 +14,7 @@ import org.bukkit.plugin.Plugin;
 
 import com.elmakers.mine.bukkit.magic.Mage;
 import com.elmakers.mine.bukkit.magic.MagicController;
+import com.elmakers.mine.bukkit.miha.discord.MagicDiscordController;
 import com.elmakers.mine.bukkit.miha.dummy.DummyPlugin;
 import com.elmakers.mine.bukkit.miha.dummy.DummyServer;
 import com.elmakers.mine.bukkit.miha.dummy.SystemCommandSender;
@@ -55,8 +56,12 @@ public class MagicMiha {
 
     public void run() {
         boolean running = true;
+        MagicDiscordController discord = null;
         try (Scanner scanner = new Scanner(System.in)) {
             loadMessages();
+            discord = new MagicDiscordController(controller);
+            discord.load();
+            discord.start();
             sender.sendMessage("Type 'stop' to exit.");
             while (running) {
                 System.out.print("> ");
@@ -94,6 +99,9 @@ public class MagicMiha {
             }
         } catch (Exception ex) {
             sender.sendMessage("An error occurred, shutting down: " + ex.getMessage());
+        }
+        if (discord != null) {
+            discord.shutdown();
         }
     }
 
