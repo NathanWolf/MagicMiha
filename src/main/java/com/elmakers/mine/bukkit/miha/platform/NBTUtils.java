@@ -2,7 +2,9 @@ package com.elmakers.mine.bukkit.miha.platform;
 
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 import org.bukkit.inventory.ItemStack;
@@ -177,6 +179,36 @@ public class NBTUtils extends NBTUtilsBase {
 
     @Override
     public Object newCompoundTag() {
+        return null;
+    }
+
+    @Override
+    public boolean saveTagsToNBT(Map<String, Object> tags, Object node, Set<String> tagNames) {
+        return false;
+    }
+
+    @Override
+    public boolean addTagsToNBT(Map<String, Object> tags, Object node) {
+        return false;
+    }
+
+    @Override
+    public Object wrapInTag(Object value) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+        return null;
+    }
+
+    @Override
+    public Set<String> getTagKeys(Object tag) {
+        return Set.of();
+    }
+
+    @Override
+    public Object getMetaObject(Object tag, String key) {
+        return null;
+    }
+
+    @Override
+    public Object getTagValue(Object tag) throws IllegalAccessException, InvocationTargetException {
         return null;
     }
 }

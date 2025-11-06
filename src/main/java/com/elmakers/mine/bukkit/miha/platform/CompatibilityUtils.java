@@ -23,6 +23,7 @@ import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.boss.BossBar;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.MemorySection;
@@ -51,7 +52,6 @@ import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.map.MapView;
-import org.bukkit.material.MaterialData;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.projectiles.ProjectileSource;
 import org.bukkit.util.BlockVector;
@@ -66,6 +66,11 @@ public class CompatibilityUtils extends com.elmakers.mine.bukkit.utility.platfor
 
     public CompatibilityUtils(Platform platform) {
         super(platform);
+    }
+
+    @Override
+    protected void setBossBarTitleComponents(BossBar bossBar, String serialized, String fallback) {
+
     }
 
     @Override
@@ -546,27 +551,7 @@ public class CompatibilityUtils extends com.elmakers.mine.bukkit.utility.platfor
     }
 
     @Override
-    public Material fromLegacy(MaterialData materialData) {
-        return null;
-    }
-
-    @Override
     public Material getMaterial(FallingBlock falling) {
-        return null;
-    }
-
-    @Override
-    public boolean hasLegacyMaterials() {
-        return false;
-    }
-
-    @Override
-    public boolean isLegacy(Material material) {
-        return false;
-    }
-
-    @Override
-    public Material getLegacyMaterial(String materialName) {
         return null;
     }
 
@@ -607,11 +592,6 @@ public class CompatibilityUtils extends com.elmakers.mine.bukkit.utility.platfor
 
     @Override
     public boolean setBlockData(Block block, String data) {
-        return false;
-    }
-
-    @Override
-    public boolean hasBlockDataSupport() {
         return false;
     }
 
@@ -706,11 +686,6 @@ public class CompatibilityUtils extends com.elmakers.mine.bukkit.utility.platfor
     }
 
     @Override
-    public boolean isLegacyRecipes() {
-        return false;
-    }
-
-    @Override
     public boolean setRecipeIngredient(ShapedRecipe recipe, char key, ItemStack ingredient, boolean ignoreDamage) {
         return false;
     }
@@ -800,6 +775,11 @@ public class CompatibilityUtils extends com.elmakers.mine.bukkit.utility.platfor
     @Override
     public Enchantment getEnchantmentByKey(String key) {
         return null;
+    }
+
+    @Override
+    protected boolean sendActionBarPackets(Player player, String message) {
+        return false;
     }
 
     @Override
