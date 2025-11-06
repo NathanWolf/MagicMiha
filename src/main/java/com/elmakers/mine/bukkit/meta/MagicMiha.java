@@ -1,5 +1,7 @@
 package com.elmakers.mine.bukkit.meta;
 
+import java.util.Scanner;
+
 import com.elmakers.mine.bukkit.magic.Mage;
 import com.elmakers.mine.bukkit.magic.MagicController;
 import com.elmakers.mine.bukkit.meta.platform.Platform;
@@ -30,6 +32,23 @@ public class MagicMiha {
     }
 
     public void run() {
+        boolean running = true;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type 'stop' to exit.");
+        while (running) {
+            System.out.print("> ");
+            String command = scanner.nextLine();
 
+            switch (command.toLowerCase()) {
+                case "stop":
+                    System.out.println("Exiting application");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Unknown command: " + command);
+                    break;
+            }
+        }
+        scanner.close();
     }
 }
