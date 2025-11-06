@@ -1,8 +1,4 @@
-package com.elmakers.mine.bukkit.meta.platform;
-
-import java.util.logging.Logger;
-
-import org.bukkit.plugin.Plugin;
+package com.elmakers.mine.bukkit.miha.platform;
 
 import com.elmakers.mine.bukkit.api.magic.MageController;
 import com.elmakers.mine.bukkit.utility.platform.EntityMetadataUtils;

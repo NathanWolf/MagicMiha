@@ -1,4 +1,4 @@
-package com.elmakers.mine.bukkit.meta.platform;
+package com.elmakers.mine.bukkit.miha.platform;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;

@@ -1,4 +1,4 @@
-package com.elmakers.mine.bukkit.meta.platform;
+package com.elmakers.mine.bukkit.miha.platform;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Entity;

@@ -1,4 +1,4 @@
-package com.elmakers.mine.bukkit.meta;
+package com.elmakers.mine.bukkit.miha.dummy;
 
 import java.io.File;
 import java.io.InputStream;

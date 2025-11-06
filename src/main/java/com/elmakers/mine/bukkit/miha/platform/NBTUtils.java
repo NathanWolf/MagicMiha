@@ -1,4 +1,4 @@
-package com.elmakers.mine.bukkit.meta.platform;
+package com.elmakers.mine.bukkit.miha.platform;
 
 import java.io.InputStream;
 import java.io.OutputStream;
