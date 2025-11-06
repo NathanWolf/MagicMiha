@@ -1,7 +1,10 @@
 package com.elmakers.mine.bukkit.miha.dummy;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -19,6 +22,11 @@ import org.jetbrains.annotations.Nullable;
 
 public class DummyPlugin implements Plugin {
     private final static Logger LOGGER = Logger.getLogger(DummyPlugin.class.getName());
+    private ClassLoader classLoader = null;
+
+    public DummyPlugin() {
+        classLoader = this.getClass().getClassLoader();
+    }
 
     @Override
     public File getDataFolder() {
@@ -35,9 +43,30 @@ public class DummyPlugin implements Plugin {
         return null;
     }
 
+    @NotNull
+    protected final ClassLoader getClassLoader() {
+        return classLoader;
+    }
+
     @Override
     public InputStream getResource(String filename) {
-        return null;
+        if (filename == null) {
+            throw new IllegalArgumentException("Filename cannot be null");
+        }
+
+        try {
+            URL url = getClassLoader().getResource(filename);
+
+            if (url == null) {
+                return null;
+            }
+
+            URLConnection connection = url.openConnection();
+            connection.setUseCaches(false);
+            return connection.getInputStream();
+        } catch (IOException ex) {
+            return null;
+        }
     }
 
     @Override
