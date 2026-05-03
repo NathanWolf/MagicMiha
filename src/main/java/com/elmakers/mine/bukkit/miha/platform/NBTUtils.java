@@ -7,14 +7,19 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 
 import com.elmakers.mine.bukkit.utility.platform.Platform;
-import com.elmakers.mine.bukkit.utility.platform.base.NBTUtilsBase;
 
-public class NBTUtils extends NBTUtilsBase {
+public class NBTUtils implements com.elmakers.mine.bukkit.utility.platform.NBTUtils {
     public NBTUtils(Platform platform) {
-        super(platform);
+    }
+
+    @Override
+    public boolean containsTag(ItemStack stack, String tag) {
+        return false;
     }
 
     @Override
@@ -24,6 +29,11 @@ public class NBTUtils extends NBTUtilsBase {
 
     @Override
     public Object getTag(Object nbtBase, String tag) {
+        return null;
+    }
+
+    @Override
+    public Object getCompoundTagFromCustomData(Object customData) {
         return null;
     }
 
@@ -43,6 +53,11 @@ public class NBTUtils extends NBTUtilsBase {
     }
 
     @Override
+    public String getString(Object node, String tag, String defaultValue) {
+        return "";
+    }
+
+    @Override
     public String getString(Object node, String tag) {
         return null;
     }
@@ -50,6 +65,11 @@ public class NBTUtils extends NBTUtilsBase {
     @Override
     public String getString(ItemStack stack, String tag) {
         return null;
+    }
+
+    @Override
+    public String getString(ItemStack stack, String tag, String defaultValue) {
+        return "";
     }
 
     @Override
@@ -63,13 +83,33 @@ public class NBTUtils extends NBTUtilsBase {
     }
 
     @Override
+    public short getShort(Object node, String tag, short defaultValue) {
+        return 0;
+    }
+
+    @Override
     public Integer getOptionalInt(Object node, String tag) {
         return null;
     }
 
     @Override
+    public int getInt(Object node, String tag, int defaultValue) {
+        return 0;
+    }
+
+    @Override
+    public int getInt(ItemStack stack, String tag, int defaultValue) {
+        return 0;
+    }
+
+    @Override
     public Double getOptionalDouble(Object node, String tag) {
         return null;
+    }
+
+    @Override
+    public boolean getBoolean(ItemStack stack, String tag, boolean defaultValue) {
+        return false;
     }
 
     @Override
@@ -85,6 +125,11 @@ public class NBTUtils extends NBTUtilsBase {
     @Override
     public int[] getIntArray(Object tag, String key) {
         return new int[0];
+    }
+
+    @Override
+    public void parseAndSet(Object node, String tag, String value) {
+
     }
 
     @Override
@@ -118,12 +163,22 @@ public class NBTUtils extends NBTUtilsBase {
     }
 
     @Override
+    public void setBoolean(ItemStack stack, String tag, boolean value) {
+
+    }
+
+    @Override
     public void setDouble(Object node, String tag, double value) {
 
     }
 
     @Override
     public void setInt(Object node, String tag, int value) {
+
+    }
+
+    @Override
+    public void setInt(ItemStack stack, String tag, int value) {
 
     }
 
@@ -149,6 +204,11 @@ public class NBTUtils extends NBTUtilsBase {
 
     @Override
     public void removeMeta(Object node, String tag) {
+
+    }
+
+    @Override
+    public void removeMeta(ItemStack stack, String tag) {
 
     }
 
@@ -183,6 +243,41 @@ public class NBTUtils extends NBTUtilsBase {
     }
 
     @Override
+    public boolean setSpawnEggEntityData(ItemStack spawnEgg, EntityType entityType, Object entityData) {
+        return false;
+    }
+
+    @Override
+    public Object getSpawnEggEntityData(ItemStack spawnEgg) {
+        return null;
+    }
+
+    @Override
+    public EntityType getSpawnEggEntityType(ItemStack itemStack) {
+        return null;
+    }
+
+    @Override
+    public void removeSpawnEggEntityData(ItemStack spawnEgg) {
+
+    }
+
+    @Override
+    public boolean saveTagsToItem(ConfigurationSection tags, ItemStack item) {
+        return false;
+    }
+
+    @Override
+    public boolean saveTagsToNBT(ConfigurationSection tags, Object node) {
+        return false;
+    }
+
+    @Override
+    public boolean saveTagsToNBT(ConfigurationSection tags, Object node, Set<String> tagNames) {
+        return false;
+    }
+
+    @Override
     public boolean saveTagsToNBT(Map<String, Object> tags, Object node, Set<String> tagNames) {
         return false;
     }
@@ -210,5 +305,10 @@ public class NBTUtils extends NBTUtilsBase {
     @Override
     public Object getTagValue(Object tag) throws IllegalAccessException, InvocationTargetException {
         return null;
+    }
+
+    @Override
+    public void convertIntegers(Map<String, Object> m) {
+
     }
 }

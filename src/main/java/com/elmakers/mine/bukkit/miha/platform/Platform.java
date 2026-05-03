@@ -2,7 +2,8 @@ package com.elmakers.mine.bukkit.miha.platform;
 
 import com.elmakers.mine.bukkit.api.magic.MageController;
 import com.elmakers.mine.bukkit.utility.platform.EntityMetadataUtils;
-import com.elmakers.mine.bukkit.utility.platform.base.PlatformBase;
+import com.elmakers.mine.bukkit.utility.platform.SpigotUtils;
+import com.elmakers.mine.bukkit.utility.platform.base_v26_1.PlatformBase;
 
 public class Platform extends PlatformBase {
 
@@ -53,5 +54,15 @@ public class Platform extends PlatformBase {
     @Override
     protected com.elmakers.mine.bukkit.utility.platform.EntityUtils createEntityUtils() {
         return new EntityUtils(this);
+    }
+
+    @Override
+    protected com.elmakers.mine.bukkit.utility.platform.MobUtils createMobUtils() {
+        return new MobUtils(this);
+    }
+
+    @Override
+    protected com.elmakers.mine.bukkit.utility.platform.SpigotUtils createSpigotUtils() {
+        return null;
     }
 }

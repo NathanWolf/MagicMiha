@@ -4,7 +4,10 @@ import org.bukkit.Color;
 import org.bukkit.NamespacedKey;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionEffectTypeCategory;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 public class DummyPotionEffectType extends PotionEffectType {
     private final NamespacedKey key;
@@ -22,6 +25,11 @@ public class DummyPotionEffectType extends PotionEffectType {
     @Override
     public boolean isInstant() {
         return false;
+    }
+
+    @Override
+    public @NonNull PotionEffectTypeCategory getCategory() {
+        return null;
     }
 
     @NotNull
@@ -56,5 +64,20 @@ public class DummyPotionEffectType extends PotionEffectType {
     @Override
     public String getTranslationKey() {
         return "";
+    }
+
+    @Override
+    public @NonNull NamespacedKey getKeyOrThrow() {
+        return null;
+    }
+
+    @Override
+    public @Nullable NamespacedKey getKeyOrNull() {
+        return null;
+    }
+
+    @Override
+    public boolean isRegistered() {
+        return false;
     }
 }

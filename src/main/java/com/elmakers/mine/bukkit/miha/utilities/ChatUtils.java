@@ -2,7 +2,7 @@ package com.elmakers.mine.bukkit.miha.utilities;
 
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
+import com.elmakers.mine.bukkit.utility.StringUtils;
 
 public class ChatUtils {
     private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("[\\s0-9\\p{Punct}\\p{IsPunctuation}\u2150-\u2BFF\uE000-\uFFFF]"); // Sorry for the unicode escapes

@@ -22,6 +22,7 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Registry;
 import org.bukkit.Server;
+import org.bukkit.ServerLinks;
 import org.bukkit.ServerTickManager;
 import org.bukkit.StructureType;
 import org.bukkit.Tag;
@@ -71,6 +72,7 @@ import org.bukkit.structure.StructureManager;
 import org.bukkit.util.CachedServerIcon;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public class DummyServer implements Server {
     private final static Logger LOGGER = Logger.getLogger(DummyServer.class.getName());
@@ -184,6 +186,11 @@ public class DummyServer implements Server {
     @Override
     public ServerTickManager getServerTickManager() {
         return null;
+    }
+
+    @Override
+    public @NonNull Map<String, String> getCodeOfConducts() {
+        return Map.of();
     }
 
     @Nullable
@@ -716,6 +723,11 @@ public class DummyServer implements Server {
     }
 
     @Override
+    public @NonNull Merchant createMerchant() {
+        return null;
+    }
+
+    @Override
     public int getMaxChainedNeighborUpdates() {
         return 0;
     }
@@ -769,6 +781,11 @@ public class DummyServer implements Server {
     @Override
     public void setMotd(@NotNull String s) {
 
+    }
+
+    @Override
+    public @NonNull ServerLinks getServerLinks() {
+        return null;
     }
 
     @Nullable
@@ -833,6 +850,16 @@ public class DummyServer implements Server {
     @Override
     public int getIdleTimeout() {
         return 0;
+    }
+
+    @Override
+    public int getPauseWhenEmptyTime() {
+        return 0;
+    }
+
+    @Override
+    public void setPauseWhenEmptyTime(int seconds) {
+
     }
 
     @NotNull

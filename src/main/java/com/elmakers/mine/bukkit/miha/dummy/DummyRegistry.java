@@ -9,6 +9,7 @@ import org.bukkit.Registry;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public class DummyRegistry<B extends Keyed> implements Registry<B> {
 
@@ -20,6 +21,11 @@ public class DummyRegistry<B extends Keyed> implements Registry<B> {
     @Override
     public B get(@NotNull NamespacedKey namespacedKey) {
         return null;
+    }
+
+    @Override
+    public @NonNull B getOrThrow(@NonNull NamespacedKey key) {
+        throw new RuntimeException("Registry not implemented");
     }
 
     @NotNull

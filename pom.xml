@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.elmakers.mine.bukkit</groupId>
     <artifactId>MagicMiha</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Magic Miha</name>
     <url>http://mine.elmakers.com</url>
 
     <properties>
-        <magic.version>10.10.5-SNAPSHOT</magic.version>
-        <bukkit.version>1.20.5-R0.1-SNAPSHOT</bukkit.version>
+        <magic.version>11.0-SNAPSHOT</magic.version>
+        <bukkit.version>26.1.1-R0.1-SNAPSHOT</bukkit.version>
         <jackson.version>2.6.5</jackson.version>
         <findbugs.version>1.3.9</findbugs.version>
     </properties>
@@ -55,6 +55,16 @@
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <version>${findbugs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.13.0</version>
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>

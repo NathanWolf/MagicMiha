@@ -2,7 +2,7 @@ package com.elmakers.mine.bukkit.miha.platform;
 
 import com.elmakers.mine.bukkit.utility.platform.Platform;
 
-public class EntityUtils extends com.elmakers.mine.bukkit.utility.platform.base.EntityUtilsBase  {
+public class EntityUtils extends com.elmakers.mine.bukkit.utility.platform.base_v26_1.EntityUtilsBase  {
     public EntityUtils(final Platform platform) {
         super(platform);
     }

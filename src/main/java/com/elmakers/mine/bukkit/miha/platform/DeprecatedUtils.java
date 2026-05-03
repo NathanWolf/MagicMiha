@@ -6,7 +6,7 @@ import org.bukkit.block.Skull;
 
 import com.elmakers.mine.bukkit.utility.platform.Platform;
 
-public class DeprecatedUtils extends com.elmakers.mine.bukkit.utility.platform.base.DeprecatedUtilsBase {
+public class DeprecatedUtils extends com.elmakers.mine.bukkit.utility.platform.base_v26_1.DeprecatedUtilsBase {
     public DeprecatedUtils(Platform platform) {
         super(platform);
     }

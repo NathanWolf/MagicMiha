@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.bukkit.inventory.ItemStack;
 
 import com.elmakers.mine.bukkit.utility.platform.Platform;
-import com.elmakers.mine.bukkit.utility.platform.base.InventoryUtilsBase;
+import com.elmakers.mine.bukkit.utility.platform.base_v26_1.InventoryUtilsBase;
 
 public class InventoryUtils extends InventoryUtilsBase {
     public InventoryUtils(Platform platform) {

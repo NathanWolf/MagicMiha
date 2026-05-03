@@ -61,6 +61,10 @@ public class MagicDiscordController {
         }
 
         ConfigurationSection config = plugin.getConfig();
+        if (config == null) {
+            plugin.getLogger().log(Level.SEVERE, "Failed to load config.yml resource");
+            return;
+        }
         token = config.getString("token", "");
         channel = config.getString("channel", "");
         commandChannel = config.getString("command_channel", "*");
@@ -159,7 +163,9 @@ public class MagicDiscordController {
 
     protected void setJDA(JDA jda) {
         this.jda = jda;
-        jda.getPresence().setActivity(Activity.playing(magic.getMessages().get("discord.status")));
+        String statusMessage = magic.getMessages().get("discord.status");
+        getLogger().info("Setting status to: " + statusMessage);
+        jda.getPresence().setActivity(Activity.playing(statusMessage));
         getLogger().info("Connected to the Discord server!");
     }
 

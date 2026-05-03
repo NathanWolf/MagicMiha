@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.logging.Logger;
 
 import com.elmakers.mine.bukkit.utility.platform.Platform;
-import com.elmakers.mine.bukkit.utility.platform.base.SchematicUtilsBase;
+import com.elmakers.mine.bukkit.utility.platform.base_v26_1.SchematicUtilsBase;
 import com.elmakers.mine.bukkit.utility.schematic.LoadableSchematic;
 
 public class SchematicUtils extends SchematicUtilsBase {
