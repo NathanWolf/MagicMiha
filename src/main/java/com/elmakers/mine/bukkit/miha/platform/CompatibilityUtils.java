@@ -597,6 +597,11 @@ public class CompatibilityUtils implements com.elmakers.mine.bukkit.utility.plat
     }
 
     @Override
+    public boolean setItemAttribute(ItemStack item, Attribute attribute, double value, String slot, String attributeOperation, UUID attributeUUID, String attributeKey) {
+        return false;
+    }
+
+    @Override
     public void sendExperienceUpdate(Player player, float experience, int level) {
 
     }
