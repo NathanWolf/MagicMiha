@@ -79,6 +79,7 @@ import org.bukkit.util.Vector;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
+import com.elmakers.mine.bukkit.api.block.MaterialAndData;
 import com.elmakers.mine.bukkit.map.BufferedMapCanvas;
 import com.elmakers.mine.bukkit.utility.BoundingBox;
 import com.elmakers.mine.bukkit.utility.DoorActionType;
@@ -1308,6 +1309,16 @@ public class CompatibilityUtils implements com.elmakers.mine.bukkit.utility.plat
 
     @Override
     public BufferedMapCanvas createMapCanvas() {
+        return null;
+    }
+
+    @Override
+    public Entity createBlockDisplayEntity(Location location, MaterialAndData materialAndData, double scale) {
+        return null;
+    }
+
+    @Override
+    public Entity createItemDisplayEntity(Location location, ItemStack itemStack, double scale) {
         return null;
     }
 }

@@ -191,6 +191,11 @@ public class ItemUtils implements com.elmakers.mine.bukkit.utility.platform.Item
     }
 
     @Override
+    public void removeDamage(ItemStack itemStack) {
+
+    }
+
+    @Override
     public void loadMeta(MageController controller, ItemMeta itemMeta, ConfigurationSection configuration) {
 
     }
